@@ -1,0 +1,36 @@
+# Exclude Python cache and virtual environments
+__pycache__/
+*.py[cod]
+venv/
+.venv
+
+# Exclude build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+
+# Exclude environment and secrets
+.env
+.env.*
+*.key
+
+# Exclude editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Exclude logs and temp files
+*.log
+*.out
+*.err
+
+# Exclude OS-specific files
+.DS_Store
+Thumbs.db
+
+# Exclude Git files
+.git/
+.gitignore
