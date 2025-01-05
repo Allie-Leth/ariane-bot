@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+# Usually contains a lot of files, you can uncomment this if you're using PyInstaller
+# /pyinstaller/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environments
+.venv
+.env
+.env.*   # For multiple environment files (e.g., .env.production, .env.test)
+*.envrc
+
+# Secrets
+*.key
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+*.out
+*.err
+
+# OS Files
+.DS_Store
+Thumbs.db
