@@ -4,14 +4,19 @@ import discord
 from discord.ext import commands
 from music import MusicCommands
 
-load_dotenv(dotenv_path='.env')
-TOKEN = os.getenv('DISCORD_TOKEN')
+# Load environment variables from the .env file
+load_dotenv()  # Automatically detects .env in the same directory
+TOKEN = os.getenv("DISCORD_TOKEN")
 
+if not TOKEN:
+    raise ValueError("No DISCORD_TOKEN found in environment or .env file!")
+
+# Set up intents
 intents = discord.Intents.default()
 intents.message_content = True
 
-
-bot = commands.Bot(command_prefix='!', intents=intents)
+# Initialize the bot
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Add music commands to the bot
 bot.add_cog(MusicCommands(bot))
@@ -22,4 +27,4 @@ async def on_ready():
 
 # Run the bot
 if __name__ == "__main__":
-    bot.run("YOUR_DISCORD_BOT_TOKEN")
+    bot.run(TOKEN)
