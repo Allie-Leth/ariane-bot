@@ -18,13 +18,11 @@ intents.message_content = True
 # Initialize the bot
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Add music commands to the bot
-bot.add_cog(MusicCommands(bot))
-
 @bot.event
 async def on_ready():
     print(f"Bot is ready as {bot.user}")
-
+    await bot.add_cog(MusicCommands(bot))
 # Run the bot
 if __name__ == "__main__":
     bot.run(TOKEN)
+

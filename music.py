@@ -5,15 +5,20 @@ import yt_dlp
 class MusicCommands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+        
     @commands.command()
     async def join(self, ctx):
-        """Join the voice channel of the user."""
-        if not ctx.author.voice:
-            await ctx.send("You must be in a voice channel to use this command.")
-            return
-        channel = ctx.author.voice.channel
-        await channel.connect()
+        if ctx.author.voice:
+            channel = ctx.author.voice.channel
+            try:
+                print(f"Attempting to connect to: {channel.name}")
+                await channel.connect(timeout=30)  # Increase timeout if needed
+                await ctx.send(f"Joined {channel.name}!")
+            except Exception as e:
+                print(f"Failed to connect to {channel.name}: {e}")
+                await ctx.send(f"Failed to join {channel.name}. Error: {e}")
+        else:
+            await ctx.send("You are not in a voice channel.")
 
     @commands.command()
     async def leave(self, ctx):
